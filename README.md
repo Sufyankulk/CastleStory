@@ -1,1 +1,1 @@
-# A classic DOS game made in Python called CastleStory.
+# A classic rpg text adventure game made in Python called CastleStory.
