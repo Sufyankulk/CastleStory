@@ -1,0 +1,65 @@
+class Hero(object):
+
+    def init(self):
+        pass
+
+    def inventory(self):
+        """
+        Hierin bijhouden welke items de speler heeft.
+        Bepaalde "Items" zullen in inventory moeten zitten voordat een quest of dergelijke
+        voltooid kan worden.
+        """
+
+        pass
+
+    def champion(self):
+        """
+        Basis van de character die later in de code die later
+        aangepast kunnen worden via functies of lambda's
+
+        Health, Armor en Strenght scaled met Level.
+        """
+
+        self.level = 5
+        self.name = raw_input("What is your name? ")
+        self.health = 100
+        self.armor = 0
+        self.strength = 5 + int(self.level *1.5)
+        self.exp = 0
+
+        class Skeleton(Hero):
+
+            def init(self):
+                self.health = int(20 + int(hero.level) * 2)
+                self.strength = int(1 + int(hero.level) * 0.5)
+
+        """
+        Health van Skeleton scaled op basis van Hero.Level
+        """
+
+        hero = Hero()
+        hero.champion()
+        skeleton = Skeleton()
+        def show_stats():
+            print "Name: " + hero.name
+            print "Level: " + str(hero.level)
+            print "Health: " + str(hero.health)
+            print "Armor: " + str(hero.armor)
+            print "Strength: " + str(hero.strength)
+
+        def battle(skeleton):
+            print " Battle "
+            print ""
+            print ""
+            print "1. Attack"
+            print "2. Check inventory"
+            move = raw_input("Pick your move")
+            if move == 1 or 1.:
+
+        show_stats()
+            print "You encounter a skeleton"
+            def battle(skeleton)
+            print "Skeleton health = " + str(skeleton.health)
+            print "He hits you for: " + str(skeleton.strength)
+            hero.health = int((hero.health) - int(skeleton.strength))
+            print "Your HP is now: " + str(hero.health)
