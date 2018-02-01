@@ -63,3 +63,4 @@ class Hero(object):
             print "He hits you for: " + str(skeleton.strength)
             hero.health = int((hero.health) - int(skeleton.strength))
             print "Your HP is now: " + str(hero.health)
+-
