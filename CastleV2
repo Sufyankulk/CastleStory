@@ -1,0 +1,83 @@
+class Hero(object):
+
+    def __init__(self):
+        # ....
+        pass
+
+    def inventory(self):
+        # The inventory of the player which will play an important role, like keys that the character requires to progress further into the story.
+        pass
+
+    def champion(self):
+        # These are the basic stats of the champion, such as level, name, health, etc.
+
+        self.level = 5
+        self.name = raw_input ("What is your name?")
+        self.health = 100
+        self.armor = 0
+        self.strenght = 5 + int(self.level *1.5)
+        self.exp = 0
+
+class Skeleton(Hero):
+
+    def __init__(self):
+        # ....
+
+        self.health = int(20 + int(hero.level) * 2)
+        self.strenght = int(1 + int(hero.level) * 0.5)
+        self.exp_gain = 10
+
+hero = Hero()
+hero.champion()
+skeleton = Skeleton()
+def show_stats():
+    print "Name: " + hero.name
+    print "Level: " + str(hero.level)
+    print "Health: " + str(hero.health)
+    print "Armor: " + str(hero.armor)
+    print "Strenght: " + str(hero.strenght)
+
+def beginning():
+        print "You are on an adventure, walking alone in an unknown forest at night time."
+        print "After climbing a small hill, you see a huge castle right in front of you."
+        print "You are thrilled to enter the castle, unlocking it's deepest secrets!"
+        print " "
+
+        answer = raw_input("Do you wish to enter the castle?")
+        print "1) You enter the castle!"
+        print "2) You decided not to go and take a different path instead!"
+
+        if answer == "Yes" or "yes" or "Yes." or "1" or "1.":
+            print "You walk towards the castle..."
+        else:
+            print "You hesitated, but went anyway."
+
+
+def battle(skeleton):
+
+    while skeleton.health >= 0:
+        print "Skeleton now has " + str(skeleton.health) + " health remaining."
+        print "Choose your action:"
+        print " "
+        print "1) Attack!"
+        print "2) Check your inventory"
+        move = raw_input("Choose your action")
+        if move == "1" or "1.":
+            print "You strike the skeleton, dealing " + str(hero.strenght) + " damage!"
+            skeleton.health = (skeleton.health) - (hero.strenght)
+            print " "
+        else:
+            print "Skeleton has been slain, you recieve 10 EXP!"
+            hero.exp = (hero.exp) + (skeleton.exp_gain)
+            if str(hero.exp == "100"):
+                print "LEVEL UP!"
+                hero.level = +1
+                print "Hero level: " + str(hero.level)
+            print " "
+            print "Your experience is now: " + str(hero.exp) + " of 100"
+
+# Below here is how the script executes, step by step.
+beginning()
+show_stats()
+print "You encounter a skeleton! You draw your weapon, you are ready to FIGHT!"
+battle(skeleton)
